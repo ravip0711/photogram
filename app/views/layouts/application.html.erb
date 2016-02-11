@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="navbar-container">
+      <div class="navbar-header">
+        <button class=" "></button>
+        <!-- stopped here -->
+      </div>
+    </div>
+  </nav>
 
   <% flash.each do |type, message| %>
   <%= content_tag :div, message, class: [:alert, alert_for(type)] %>
