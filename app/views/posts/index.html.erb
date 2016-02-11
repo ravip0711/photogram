@@ -1,3 +1,11 @@
 <h1>Photogram</h1>
 
 <%= link_to "New Post", new_post_path %>
+</br>
+</br>
+<% @posts.reverse_each do |post|%>
+  <%= link_to (image_tag post.image.url(:medium)), post_path(post) %>
+  </br>
+  <%= post.caption %>
+</br>
+<% end %>

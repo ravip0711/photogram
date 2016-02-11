@@ -1,16 +1,3 @@
 <h1>New Post</h1>
 
-<%= form_for @post do |f|  %>
-  <p>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </p>
-  <p>
-    <%= f.label :caption %>
-    <%= f.text_field :caption %>
-  </p>
-  <p>
-    <%= f.submit "Submit" %>
-  </p>
-<% end %>  
-
+<%= render "form" %>

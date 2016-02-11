@@ -1,0 +1,9 @@
+<h1>Edit Post</h1>
+<h3>Current Image</h3>
+<%= image_tag @post.image.url(:medium) %>
+
+<%= render "form"  %>
+
+<%= link_to "Delete", post_path(@post), method: "Delete" %>
+
+<%= link_to "Cancel", posts_path %>
