@@ -36,7 +36,13 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+# Use to import Images
 gem "paperclip", "~> 4.3"
+
+# Use for Authentication
+gem 'devise'
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
