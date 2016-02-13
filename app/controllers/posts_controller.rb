@@ -1,21 +1,23 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Your post has been created."
       redirect_to @post
     else
-      flash.now[:alert] = "Error: you need an image to post."
+      flash.now[:alert] = "Error: post could not be created, please check the form."
       render :new
     end
   end
@@ -53,4 +55,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def owned_post
+    unless @post.user.id == current_user.id
+      flash[:alert] = "That post doesn't belong to you!"
+      redirect_to root_path
+    end
+  end
 end
