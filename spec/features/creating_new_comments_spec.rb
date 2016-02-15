@@ -7,9 +7,9 @@ feature 'Creating comments' do
     sign_in_with user
 
     visit '/'
-    fill_in 'comment_content', with: 'this is a cool post'
+    fill_in "comment[content]", with: "this is a cool post"
     click_on 'Submit'
 
-    expect(page).to have_css("div.comments#{post.id}", text: 'this is a cool post')
+    expect(page).to have_content("this is a cool post")
   end
 end
