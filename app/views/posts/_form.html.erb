@@ -1,16 +1,29 @@
-<div class="form-wrapper">
-  <%= form_for @post, html: { class: 'form-horizontal' } do |f|  %>
-    <div class="form-group">
-      <%= f.label :image %>
-      <%= f.file_field :image %>
+<div class="posts-wrapper">
+  <div class="post">
+    <div class="post-body">
+      <div class="image-wrap">
+        <%= form_image_select(@post) %>
+        <%= form_for @post, html: { class: 'form-horizontal' } do |f|  %>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <!-- add errors -->
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="form-group text-center">
+              <h4>Upload an image (this is required):</h4>
+              <%= f.file_field :image, onchange: 'loadFile(event)' %>
+            </div>
+            <div class="form-group text-center">
+              <%= f.text_field :caption, placeholder: "Add your caption" %>
+            </div>
+            <div class="form-group text-center">
+              <%= f.submit "Submit", class: 'btn-success btn-block' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="form-group text-center">
-      <%= f.label :caption %>
-      <%= f.text_field :caption %>
-    </div>
-    <div class="form-group text-center">
-      <%= f.submit "Submit", class: 'btn-success' %>
-    </div>
-  <% end %>
+  </div>
 </div>
 

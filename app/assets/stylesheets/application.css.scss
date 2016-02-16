@@ -109,11 +109,12 @@ body {
       font-weight: 500;
       margin-right: 0.3em;
     }
-    .delete-comment {
-      float: right;
-      color: #515151;
-    }
   }
+  .delete-comment {
+    float: right;
+    color: #515151;
+  }
+  
   margin-bottom: 7px;
   padding-top: 24px;
   padding-left: 24px;
@@ -211,6 +212,14 @@ html {
   background-size: cover;
 }
 
+#image-preview {
+  margin: 0px auto;
+}
+
+#post_image {
+  padding: 1em;
+  margin: 0px auto;
+}
 
 /*flash colors*/
 .alert-error {
