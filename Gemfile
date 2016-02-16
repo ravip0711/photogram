@@ -44,6 +44,8 @@ gem "paperclip", "~> 4.3"
 # Use for Authentication
 gem 'devise'
 
+# User for pagination
+gem 'kaminari'
 
 
 # Use ActiveModel has_secure_password
