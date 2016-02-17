@@ -144,6 +144,16 @@ body {
   justify-content: center;
 }
 
+// Comments paginator
+.comments {
+  .paginator {
+    margin: 0.5em;
+    .more-comments {
+      color: #A5A7AA;
+    }
+  }
+}
+
 /* ## Wrapper and styling for the new and edit views ## */
 
 .form-wrapper {

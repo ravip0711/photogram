@@ -1,0 +1,7 @@
+<%= @user.user_name %>
+<!-- working on this -->
+<%= form_for(@user) do |f| %>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+  <%= f.submit %>
+<% end %>
