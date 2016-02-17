@@ -8,6 +8,16 @@ module ApplicationHelper
     image_tag 'placeholder.jpg', id: 'image-preview', class: 'img-responsive'
   end
 
+  # Profile Avatar
+  def profile_avatar_select(user)
+    return image_tag user.avatar.url(:medium),
+                    id: 'image-preview',
+                    class: 'img-responsive img-circle profile-image' if user
+  .avatar.exists?
+    image_tag 'default-avatar.png', id: 'image-preview',
+                                    class: 'img-responsive img-circle profile-image'
+  end
+
 
   # Alert flash types
   def alert_for(flash_type)
